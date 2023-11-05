@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block body %}
+    <style>
+        .wrapper {
+            flex-direction: column; 
+            width: 100vw; 
+            height: 100vh; 
+            justify-content: center; 
+            align-items: center;
+        }
+        .flex {
+            display: flex;
+        }
+        .content {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    
+    <div class="wrapper flex">
+        <div class="flex content">
+            <img src="/morpheus.png" />
+            <h1>{{ "Hello %user%"|trans({'%user%': user.email}) }}</h1>
+            <a href="{{ path("app.logout") }}">{{ "Logout"|trans }}</a>
+        </div>
+    </div>
+{% endblock %}

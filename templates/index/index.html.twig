@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hi, dude!{% endblock %}
+
+{% block body %}
+    <style>
+        .wrapper {
+            display: flex; 
+            flex-direction: column; 
+            width: 100vw; 
+            height: 100vh; 
+            justify-content: center; 
+            align-items: center;
+        }
+        .links-wrapper {
+            width: auto; 
+            position: relative;
+            display: flex;
+        }
+        .accept {
+            background-image: url('/accept.png');
+            background-position: right;
+            cursor: pointer;
+            display: block;
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .accept:hover {
+            background-image: url('/accept_hover.png');
+        }
+        .forget {
+            background-image: url('/forget.png');
+            cursor: pointer;
+            display: block;
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .forget:hover {
+            background-image: url('/forget_hover.png');
+        }
+    </style>
+    
+    <div class="wrapper">
+        <div>
+            <h1 align="center" class="title">Welcome!</h1>
+
+            <div class="links-wrapper">
+                <img src="/hands.png" />
+                <a href="http://google.com" class="forget">&nbsp;</a>
+                <a href="{{ path('app.login') }}" class="accept">&nbsp;</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
